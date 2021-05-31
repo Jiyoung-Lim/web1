@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SubActivity"
+    android:background="#151B33"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/searchToolber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E0E6F8">
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+            <EditText
+                android:id="@+id/editSearch"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:singleLine="true"
+                android:lines="1"
+                android:paddingLeft="20dp"
+
+                android:hint="노선명 입력"/>
+            <EditText
+                android:id="@+id/editStationSearch"
+                android:visibility="gone"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:singleLine="true"
+                android:lines="1"
+                android:paddingLeft="20dp"
+                android:hint="정류장명,번호 입력"/>
+        </FrameLayout>
+        <Button
+            android:id="@+id/btnSch"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="right"
+            android:layout_marginRight="50dp"/>
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/searchTab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tabBus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="버스"/>
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tabStation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="정류장"/>
+    </com.google.android.material.tabs.TabLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerBus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerStation"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
